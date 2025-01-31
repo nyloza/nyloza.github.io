@@ -1,0 +1,31 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>. ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="container">
+    <nav>
+      <a href="/about" onclick="loadPage('about', event)">ABOUT</a>
+      <a href="/" onclick="loadPage('/', event)">alexis</a>
+      <a href="/projects" onclick="loadPage('projects', event)">PROJECTS</a>
+    </nav>
+
+
+    <div class="content">
+      <div class="carousel">
+        <button class="prev">&#10094;</button>
+        <div class="carousel-container">
+          <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623908674/Screen_Shot_2021-06-17_at_14.28.31_gpor4j.png">
+          <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738331438/connecpet_eohfrs.webp">
+          <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738332564/code-adventures_v91oqx.webp">
+        </div>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script> 
+</body>
