@@ -31,6 +31,10 @@ nav a {
   text-decoration: none;
 }
 
+nav a:hover, .tooltip:hover {
+  color: #333;
+}
+
 nav a:nth-child(2) {
   font-size: 30px;
   letter-spacing: -4px;
@@ -55,10 +59,36 @@ nav a:nth-child(2) {
 
 .flex-box {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: start;
   justify-content: start;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+#video-sound {
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  z-index: 10;
+  bottom: 10%;
+  right: 14.9%;
+}
+
+#video-sound:hover {
+  color: #fdb813
+}
+
+.yellow {
+  color: #fdb813 !important;
 }
 
 #profile-img {
@@ -85,7 +115,7 @@ nav a:nth-child(2) {
   border-radius: 6px;
 }
 
-.tooltip .tooltiptext {
+.tooltip .tooltip-text {
   visibility: hidden;
   width: 200px;
   border-radius: 5px;
@@ -98,19 +128,20 @@ nav a:nth-child(2) {
   transition: opacity 0.3s;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
 
-.tooltip .tooltiptext img {
+.tooltip .tooltip-text img {
   width: 100%;
   border-radius: 6px;
 }
 
 #project-img {
   width: auto;
-  height: 90%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .carousel {
@@ -121,24 +152,26 @@ nav a:nth-child(2) {
 .carousel-container {
   height: 100%;
   display: flex;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 1s ease-in-out;
 }
 
 .carousel-item {
   min-width: 100%;
-  transition: transform 0.3s;
+  transition: transform 1s;
 }
 
-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  color: #67645e;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
+.carousel {
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: #67645e;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
 }
 
 .prev {
@@ -149,3 +182,54 @@ button {
   right: 10px;
 }
 
+@media (max-width: 999px) {
+  body {
+    height: auto;
+    padding: 20px;
+  }
+
+  #container {
+    height: 100vh;
+    width: 90%;
+  }
+
+  .content {
+    overflow: scroll;
+  }
+
+  .flex-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  video {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  #video-sound {
+    bottom: -2.5%;
+    right: 10%;
+  }
+
+  #profile-img {
+    width: 100%;
+    flex-grow: 0;
+  }
+
+  .text {
+    width: 100%;
+    min-height: 90%;
+    text-align: center;
+  }
+
+  .tooltip .tooltip-text {
+    width: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #project-img {
+    object-fit: contain;
+  }
+}

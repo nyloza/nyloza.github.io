@@ -52,16 +52,19 @@ const items = document.querySelectorAll(".carousel-item");
 const totalItems = items.length;
 let index = 0;
 
-document.querySelector(".next").addEventListener("click", () => {
+if (container) {
+  document.querySelector(".next").addEventListener("click", () => {
     index = (index + 1) % totalItems;
     updateCarousel();
-});
-
-document.querySelector(".prev").addEventListener("click", () => {
+  });
+  
+  document.querySelector(".prev").addEventListener("click", () => {
     index = (index - 1 + totalItems) % totalItems;
     updateCarousel();
-});
-
-function updateCarousel() {
+  });
+  
+  function updateCarousel() {
     container.style.transform = `translateX(-${index * 100}%)`;
+  }
 }
+
