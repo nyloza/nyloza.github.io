@@ -99,12 +99,13 @@ video {
 .text {
   min-width: 30%;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
   color: #67645e;
   margin: 0 15px;
   text-decoration: none;
   flex-grow: 1;
+  transform: translateY(2%);
 }
 
 .tooltip {
@@ -125,7 +126,7 @@ video {
   bottom: 125%;
   left: 50%;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 1s;
 }
 
 .tooltip:hover .tooltip-text {
@@ -182,7 +183,7 @@ video {
   right: 10px;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1200px) {
   body {
     height: auto;
     padding: 20px;
@@ -191,6 +192,15 @@ video {
   #container {
     height: 100vh;
     width: 90%;
+  }
+
+  nav a {
+    font-size: 12px;
+    margin: 0 10px;
+  }
+
+  nav a:nth-child(2) {
+    font-size: 24px;
   }
 
   .content {
@@ -219,14 +229,13 @@ video {
 
   .text {
     width: 100%;
-    min-height: 90%;
+    min-height: 75%;
     text-align: center;
   }
 
   .tooltip .tooltip-text {
     width: 150px;
     left: 50%;
-    transform: translateX(-50%);
   }
 
   #project-img {
