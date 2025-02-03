@@ -1,31 +1,51 @@
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>. ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>.⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 
-<body>
-  <div id="container">
-    <nav>
-      <a href="/about" onclick="loadPage('about', event)">ABOUT</a>
-      <a href="/" onclick="loadPage('/', event)">alexis</a>
-      <a href="/projects" onclick="loadPage('projects', event)">PROJECTS</a>
-    </nav>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div id="container">
+      <nav>
+        <a href="/about" onclick="loadPage('about', event)">ABOUT</a>
+        <a href="/" onclick="loadPage('/', event)">alexis</a>
+        <a href="/projects" onclick="loadPage('projects', event)">PROJECTS</a>
+      </nav>
 
 
-    <div class="content">
-      <div class="carousel">
-        <button class="prev">&#10094;</button>
-        <div class="carousel-container">
-          <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623908674/Screen_Shot_2021-06-17_at_14.28.31_gpor4j.png">
-          <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738331438/connecpet_eohfrs.webp">
-          <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738332564/code-adventures_v91oqx.webp">
+      <div class="content">
+        <div class="carousel">
+          <button class="prev">&#10094;</button>
+          <div class="carousel-container">
+            <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623908674/Screen_Shot_2021-06-17_at_14.28.31_gpor4j.png">
+            <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738331438/connecpet_eohfrs.webp">
+            <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738332564/code-adventures_v91oqx.webp">
+          </div>
+          <button class="next">&#10095;</button>
         </div>
-        <button class="next">&#10095;</button>
       </div>
     </div>
-  </div>
-  <script src="script.js"></script> 
-</body>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/alexis-sae-an/" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+          </a>
+          <a href="mailto:alexisanyc@gmail.com">
+            <img src="https://img.icons8.com/ios/452/email.png" alt="Email">
+          </a>
+          <a href="https://github.com/apprehensive-fig" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+          </a>  
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script> 
+  </body>
+</html>
