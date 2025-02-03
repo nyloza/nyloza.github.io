@@ -279,4 +279,17 @@ video {
   #project-img {
     object-fit: contain;
   }
+
+  .social-icons {
+    display: flex;
+    gap: 5px;
+    img {
+      height: 10px;
+      width: 10px;
+      opacity: 0.4;
+    }
+    img:hover {
+      opacity: 0.7;
+    }
+  }
 }
