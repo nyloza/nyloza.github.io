@@ -160,6 +160,14 @@ video {
 .carousel-item {
   min-width: 100%;
   transition: transform 1s;
+  position: relative;
+  display: inline-block;
+}
+
+.carousel-item img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
 }
 
 .carousel {
@@ -212,6 +220,52 @@ footer {
 
 .footer-container a:hover {
   color: #333;
+}
+
+@media (min-width: 780px) {
+  .carousel-item {
+    position: relative;
+    display: inline-block;
+  }
+
+  .info-circle {
+    width: 20px;
+    height: 20px;
+    background: #67645e;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: grab;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .info-circle:active {
+    cursor: grabbing;
+  }
+
+  .info-circle:hover {
+    transform: scale(1.2);
+  }
+
+  .info-box {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background: #67645e;
+    color: #f1f0ed;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 14px;
+    z-index: 1
+  }
+
+  .info-circle:hover + .info-box,
+  .info-box:hover {
+    display: block;
+  }  
 }
 
 @media (max-width: 1200px) {

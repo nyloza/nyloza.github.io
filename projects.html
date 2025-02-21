@@ -23,12 +23,20 @@
         <div class="carousel">
           <button class="prev">&#10094;</button>
           <div class="carousel-container">
-            <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1623908674/Screen_Shot_2021-06-17_at_14.28.31_gpor4j.png">
-            <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738331438/connecpet_eohfrs.webp">
-            <img id="project-img" class="carousel-item" src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738332564/code-adventures_v91oqx.webp">
+            <div class="carousel-item">
+              <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738331438/connecpet_eohfrs.webp">
+              <div class="info-circle"></div>
+              <div class="info-box">bootcamp final project:<br>a mobile app for connecting pet owners (ruby on rails)</div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738332564/code-adventures_v91oqx.webp">
+              <div class="info-circle"></div>
+              <div class="info-box">new feature:<br>code adventures (code challenges)<br>front-end and back-end (ruby on rails)</div>
+            </div>
           </div>
           <button class="next">&#10095;</button>
         </div>
+        
       </div>
     </div>
     <footer class="footer">
@@ -40,4 +48,64 @@
     </footer>
     <script src="script.js"></script> 
   </body>
+
+  <script>
+    document.querySelectorAll(".info-circle").forEach(circle => {
+      let isDragging = false;
+      let offsetX, offsetY;
+      let infoBox = circle.nextElementSibling; // Get the corresponding info box
+
+      circle.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        offsetX = e.clientX - circle.getBoundingClientRect().left;
+        offsetY = e.clientY - circle.getBoundingClientRect().top;
+        circle.style.position = "absolute";
+        circle.style.zIndex = 1000;
+
+        // Hide info box while dragging
+        if (infoBox) infoBox.style.display = "none";
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+
+        let parent = circle.closest(".carousel-item");
+        let parentRect = parent.getBoundingClientRect();
+
+        let x = e.clientX - parentRect.left - offsetX;
+        let y = e.clientY - parentRect.top - offsetY;
+
+        // Prevent moving out of bounds
+        x = Math.max(0, Math.min(parentRect.width - circle.clientWidth, x));
+        y = Math.max(0, Math.min(parentRect.height - circle.clientHeight, y));
+
+        // Move circle
+        circle.style.left = `${x}px`;
+        circle.style.top = `${y}px`;
+
+        // Move info-box with some offset below the circle
+        if (infoBox) {
+          infoBox.style.left = `${x}px`;
+          infoBox.style.top = `${y + 30}px`; // Adjust this value for spacing
+        }
+      });
+
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+
+        // Show info box again after dragging stops
+        if (infoBox) infoBox.style.display = "";
+      });
+
+      // Prevent info box from showing while dragging
+      circle.addEventListener("mouseenter", () => {
+        if (!isDragging && infoBox) infoBox.style.display = "block";
+      });
+
+      circle.addEventListener("mouseleave", () => {
+        if (infoBox) infoBox.style.display = "none";
+      });
+    });
+  </script>
 </html>
+
