@@ -22,22 +22,9 @@
 
       <img id="cursor" src="images/sushi.png" alt="Cursor" />
 
-      <div content="content">
-
-        <video id="myVideo" width="100%" autoplay muted loop>
-          <source src="https://res.cloudinary.com/dzwpbkn3u/video/upload/v1693542150/IMG_8414_qd5evf.mov" type="video/mp4">
-        </video>
-
-        <button id="video-sound" onclick="toggleMute()">&#x2600;</button>
-        <script>
-          function toggleMute() {
-            let video = document.getElementById("myVideo");
-            video.muted = !video.muted;
-          }
-        </script>   
-
+      <div class="grid-container">
       </div>
-    </div>
+
     <footer class="footer">
       <div class="footer-container">
         <a href="https://www.linkedin.com/in/alexis-sae-an/" target="_blank">linkedin</a>
@@ -48,10 +35,3 @@
     <script src="script.js"></script> 
   </body>
 </html>
-
-<script>
-  document.getElementById('video-sound').addEventListener('click', function() {
-  this.classList.toggle('yellow');
-});
-
-</script>
