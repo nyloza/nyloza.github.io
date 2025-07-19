@@ -68,3 +68,26 @@ if (container) {
   }
 }
 
+// Blog post loading
+
+function loadBlogPost(slug, event) {
+  event.preventDefault();
+
+  fetch(`posts/${slug}.html`)
+    .then(res => {
+      if (!res.ok) throw new Error("Post not found");
+      return res.text();
+    })
+    .then(html => {
+      document.querySelector('.grid-container').innerHTML = `
+        <div class="blog-post">
+          <a href="#" id="back-to-blog" onclick="loadPage('blog', event)">← Back to blog</a>
+          ${html}
+        </div>
+      `;
+    })
+    .catch(() => {
+      document.querySelector('.grid-container').innerHTML = "<p>Post not found :(</p>";
+    });
+}
+
