@@ -1,6 +1,8 @@
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", Cantarell, "Helvetica Neue", sans-serif;
-  text-align: center;
+  height: 100%;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   margin: 0;
   padding: 0;
   display: flex;
@@ -10,41 +12,34 @@ body {
   flex-direction: column;
 }
 
-@keyframes slideUp {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
+  #container {
+    height: 100vh;
+    width: 70%;
   }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-#container {
-  width: 70%;
-  height: 80%;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  overflow: auto;
-}
 
 nav {
-  background: #f1f0ed;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 nav a {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   font-size: 14px;
-  font-weight: 600;
-  color: #67645e;
-  margin: 0 15px;
+  font-weight: 300;
+  color: #222;
   text-decoration: none;
 }
 
-nav a:hover, .tooltip:hover {
+.nav-center a {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+}
+
+nav a:hover {
   color: #333;
 }
 
@@ -104,111 +99,22 @@ video {
   color: #fdb813 !important;
 }
 
-#profile-img {
-  filter: grayscale(1) contrast(1) brightness(1);
-  flex-grow: 3;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 2s ease-out forwards;
-}
-
 .text {
-  min-width: 30%;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 12px;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 300;
+  color: #222;
+}
+
+.text h4 {
+  font-size: 16px;
   font-weight: 400;
-  color: #67645e;
-  margin: 0 15px;
-  text-decoration: none;
-  flex-grow: 1;
-  opacity: 0;
-  transform: translateY(2%);
-  animation: slideUp 2s ease-out forwards;
-  animation-delay: 0.2s;
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: underline;
-  border-radius: 6px;
-}
-
-.tooltip .tooltip-text {
-  visibility: hidden;
-  width: 200px;
-  border-radius: 5px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.tooltip:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
-}
-
-.tooltip .tooltip-text img {
-  width: 100%;
-  border-radius: 6px;
-}
-
-#project-img {
-  width: auto;
-  height: 100%;
-  object-fit: cover;
-}
-
-.carousel {
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel-container {
-  height: 100%;
-  display: flex;
-  transition: transform 1s ease-in-out;
-}
-
-.carousel-item {
-  min-width: 100%;
-  transition: transform 1s;
-  position: relative;
-  display: inline-block;
-  animation: slideUp 2s ease-out forwards;
-}
-
-.carousel-item img {
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
-}
-
-.carousel {
-  button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    color: #67645e;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-  }
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
+.text p {
+  font-size: 16px;
+  font-weight: 300;
 }
 
 footer {
@@ -220,25 +126,15 @@ footer {
   width: 100%;
 }
 
-.footer-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: auto;
-}
-
-.footer-container a {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 9px;
-  color: #67645e;
+footer p {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 10px;
+  text-align: center;
+  color: #222;
   margin: 0;
   text-decoration: none;
-}
-
-.footer-container a:hover {
-  color: #333;
 }
 
 #grid-gallery {
@@ -254,31 +150,29 @@ footer {
   width: 100%;
   height: 100%;
   opacity: 0;
-  animation: slideUp 2s ease-out forwards;
 }
 
-#grid-gallery img:nth-child(1) { animation-delay: 0s; }
-#grid-gallery img:nth-child(2) { animation-delay: 0.1s; }
-#grid-gallery img:nth-child(3) { animation-delay: 0.2s; }
-
-.blog-title {
+.post-title {
   text-align: left;
   font-size: 14px;
   color: #fefefe;
   margin-bottom: 2rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
-.blog-list {
-  max-width: 800px;
-  margin: 3rem auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 0 1rem;
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  justify-items: center;
+  scrollbar-width: none;
 }
 
-.blog-preview {
+.post-list::-webkit-scrollbar {
+  display: none;
+}
+
+.post-preview {
   text-align: left;
   padding: 1.5rem 2rem;
   border-radius: 6px;
@@ -286,110 +180,63 @@ footer {
   backdrop-filter: blur(5px);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.07);
   transition: transform 0.2s ease;
-  animation: slideUp 2s ease-out forwards;
 }
 
-.blog-preview:hover {
-  transform: translateY(-4px);
+.post-preview-text {
+  display: flex;
+  align-items: baseline;
+  justify-content: start;
+  gap: 10px;
 }
 
-.blog-preview:hover p {
-  color: #444;
-}
-
-.blog-preview h3 {
-  font-weight: 600;
-  font-size: 12px;
-  color: #555;
+.post-preview-text h3 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #222;
   margin-bottom: 5px;
 }
 
-.blog-preview .date {
-  font-size: 9px;
-  color: #777;
+.post-preview-text h1 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 28px;
+  color: #222;
   margin-bottom: 5px;
 }
 
-.blog-preview .excerpt {
-  color: #666;
-  font-size: 12px;
-  margin-bottom: 5px;
+.post-image {
+  width: 400px;
 }
 
-#back-to-blog {
+#back-to-index {
   font-size: 12px;
-  font-weight: 600;
-  color: #555;
+  font-weight: 300;
+  color: #222;
   text-decoration: none;
 }
 
-#back-to-blog:hover {
+#back-to-index:hover {
   color: #222;
 }
 
-.blog-post {
-  height: 100vh;
+.post-content {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   padding: 10px;
 }
 
-@media (min-width: 780px) {
-  .carousel-item {
-    position: relative;
-    display: inline-block;
-  }
-
-  .info-circle {
-    width: 20px;
-    height: 20px;
-    background: #67645e;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: grab;
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .info-circle:active {
-    cursor: grabbing;
-  }
-
-  .info-circle:hover {
-    transform: scale(1.2);
-  }
-
-  .info-box {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 10px;
-    background: #67645e;
-    color: #f1f0ed;
-    padding: 10px;
-    border-radius: 5px;
-    width: 150px;
-    font-size: 14px;
-    z-index: 1
-  }
-
-  .info-circle:hover + .info-box,
-  .info-box:hover {
-    display: block;
-  }
-
-  #grid-gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-
-  #grid-gallery .image {
-    width: 327px;
-    height: 327px;
-  }
+.post-content h1 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 45px;
+  text-align: left;
+  color: #222;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1200px) {
@@ -404,12 +251,8 @@ footer {
   }
 
   nav a {
-    font-size: 12px;
+    font-size: 16px;
     margin: 0 10px;
-  }
-
-  nav a:nth-child(3) {
-    font-size: 24px;
   }
 
   .content {
@@ -421,38 +264,8 @@ footer {
     align-items: center;
   }
 
-  video {
-    object-fit: cover;
-    height: 100%;
-  }
-
-  #video-sound {
-    display: none;
-  }
-
-  #profile-img {
-    width: 100%;
-    flex-grow: 0;
-  }
-
   .text {
-    width: 100%;
-    min-height: 65%;
-    font-size: 11px;
-    text-align: center;
-    animation-delay: 0.3s;
-  }
-
-  .tooltip .tooltip-text {
-    width: 150px;
-    left: 50%;
-  }
-
-  #project-img {
-    object-fit: contain;
-  }
-
-  footer {
-    display: none;
+    font-size: 12px;
+    text-align: left;
   }
 }

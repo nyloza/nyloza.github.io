@@ -3,55 +3,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>.⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
   </head>
 
   <body>
     <div id="container">
       <nav>
-        <a href="/about" onclick="loadPage('about', event)">ABOUT</a>
-        <a href="/blog" onclick="loadPage('blog', event)">BLOG</a>
-        <a href="/" onclick="loadPage('/', event)">alexis</a>
-        <a href="/projects" onclick="loadPage('projects', event)">PROJECTS</a>
-        <a href="/gallery" onclick="loadPage('gallery', event)">GALLERY</a>
+        <div class="nav-left">
+          <a href="https://www.linkedin.com/in/alexis-sae-an/" target="_blank">linkedin</a>
+        </div>
+        <div class="nav-center">
+          <a href="/" onclick="loadPage('/', event)">ALEXIS</a>
+        </div>
+        <div class="nav-right">
+          <a href="mailto:alexisanyc@gmail.com">email</a>
+        </div>
       </nav>
 
-      <img id="cursor" src="images/sushi.png" alt="Cursor" />
-
-      <div content="content">
-
-        <video id="myVideo" width="100%" autoplay muted loop>
-          <source src="https://res.cloudinary.com/dzwpbkn3u/video/upload/v1693542150/IMG_8414_qd5evf.mov" type="video/mp4">
-        </video>
-
-        <button id="video-sound" onclick="toggleMute()">&#x2600;</button>
-        <script>
-          function toggleMute() {
-            let video = document.getElementById("myVideo");
-            video.muted = !video.muted;
-          }
-        </script>   
-
+        <div id="post-list" class="post-list">
+          <a href="#acrlic-paintings" onclick="loadBlogPost('acrylic-paintings', event)" style=" text-decoration:none">
+            <div class="post-preview">
+              <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1752892989/IMG_9487_r7tx96.jpg" width="400" height="auto" alt="painting of donald trump and lawnmower boy" >
+              <div class="post-preview-text">
+                <h3>ART</h3>
+                <h1 class="post-heading">Acrylic paintings January - May 2025</h1>
+              </div>
+            </div>
+          </a>
+          <a href="#about" onclick="loadBlogPost('about', event)" style="text-decoration:none">
+            <div class="post-preview">
+              <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1738322781/profile_yjkifu.webp" width="400" height="auto" style="filter:grayscale(100%)" alt="headshot of a woman">
+              <div class="post-preview-text">
+                <h3>PROFILE</h3>
+                <h1 class="post-heading">About Alexis S.</h1>
+              </div>
+            </div>
+          </a>
+          <a href="#projects" onclick="loadBlogPost('projects', event)" style="text-decoration:none">
+            <div class="post-preview">
+              <img src="https://res.cloudinary.com/dzwpbkn3u/image/upload/v1757860752/18_wykvgv.png" width="400" height="auto" style="filter:grayscale(100%)" alt="headshot of a woman">
+              <div class="post-preview-text">
+                <h3>PROJECTS</h3>
+                <h1 class="post-heading">Python App for Calculating Batter wOBA Against Opposing Team Pitchers</h1>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
+
     <footer class="footer">
-      <div class="footer-container">
-        <a href="https://www.linkedin.com/in/alexis-sae-an/" target="_blank">linkedin</a>
-        <a href="mailto:alexisanyc@gmail.com">@</a>
-        <a href="https://github.com/apprehensive-fig" target="_blank">github</a>
-      </div>
+      <p>2025</p>
     </footer>
     <script src="script.js"></script> 
   </body>
 </html>
-
-<script>
-  document.getElementById('video-sound').addEventListener('click', function() {
-  this.classList.toggle('yellow');
-});
-
-</script>
