@@ -15,12 +15,23 @@ body {
   #container {
     height: 100vh;
     width: 70%;
+    margin-bottom: 60px;
   }
 
 nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 100;
+  width: 100%;
+  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 nav a {
@@ -124,6 +135,7 @@ footer {
   bottom: 0;
   padding-block: 5px;
   width: 100%;
+  z-index: 100;
 }
 
 footer p {
@@ -239,6 +251,41 @@ footer p {
   margin-bottom: 5px;
 }
 
+img[alt="headshot of a woman"] {
+  filter: grayscale(100%);
+}
+
+.post-preview img,
+.post-body img,
+.post-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .post-preview img,
+  .post-body img,
+  .post-image {
+    max-width: 100vw;
+    width: 100vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-preview img,
+  .post-body img,
+  .post-image {
+    max-width: 100vw;
+    width: 100vw;
+    border-radius: 0;
+  }
+}
+
 @media (max-width: 1200px) {
   body {
     height: auto;
@@ -267,5 +314,166 @@ footer p {
   .text {
     font-size: 12px;
     text-align: left;
+  }
+}
+
+
+@media (max-width: 900px) {
+  body {
+    height: auto;
+    padding: 10px;
+    align-items: stretch;
+  }
+
+  #container {
+    width: 98%;
+    min-width: 0;
+    height: auto;
+    padding: 0 2vw;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 8px;
+  }
+
+  .nav-center a {
+    font-size: 22px;
+  }
+
+  .content {
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .flex-box {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+  }
+
+  .post-list {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .post-image {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .post-preview {
+    padding: 1rem 1vw;
+  }
+
+  .post-content h1 {
+    font-size: 32px;
+    line-height: 36px;
+    text-align: left;
+  }
+
+  .post-preview-text h1 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .post-preview-text h3 {
+    font-size: 13px;
+  }
+
+  .post-title {
+    font-size: 12px;
+  }
+
+  .text h4,
+  .text p {
+    font-size: 14px;
+  }
+
+  #video-sound {
+    right: 5vw;
+    bottom: 8%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  #container {
+    width: 100vw;
+    min-width: 0;
+    padding: 0 2vw;
+    margin-bottom: 70px;
+  }
+
+  nav {
+    padding: 0 2vw;
+  }
+
+  .nav-center a {
+    font-size: 18px;
+  }
+
+  .content {
+    padding: 0;
+    width: 100vw;
+    min-width: 0;
+    box-shadow: none;
+  }
+
+  .post-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100vw;
+  }
+
+  .post-image {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .post-preview {
+    padding: 0.5rem 0.5vw;
+  }
+
+  .post-content h1 {
+    font-size: 22px;
+    line-height: 26px;
+    text-align: left;
+  }
+
+  .post-preview-text h1 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .post-preview-text h3 {
+    font-size: 11px;
+  }
+
+  .post-title {
+    font-size: 10px;
+  }
+
+  .text h4,
+  .text p {
+    font-size: 12px;
+  }
+
+  #video-sound {
+    right: 2vw;
+    bottom: 5%;
+  }
+
+  footer p {
+    font-size: 9px;
+    padding: 2px 0;
   }
 }
