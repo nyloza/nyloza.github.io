@@ -51,7 +51,13 @@ function loadPage(page, event = null) {
 function loadBlogPost(slug, event) {
   event.preventDefault();
 
-  fetch(`posts/${slug}.html`)
+  // Check if current page is Japanese
+  const isJapanese = window.location.pathname.endsWith('.ja.html');
+
+  // Choose the correct post file
+  const postFile = isJapanese ? `posts/${slug}.ja.html` : `posts/${slug}.html`;
+
+  fetch(postFile)
     .then(res => {
       if (!res.ok) throw new Error("Post not found");
       return res.text();
@@ -59,13 +65,61 @@ function loadBlogPost(slug, event) {
     .then(html => {
       document.querySelector('#container').innerHTML = `
         <div class="post-content">
-          <a href="#" id="back-to-index" onclick="loadPage('index', event)">← Back</a>
+          <a href="#" id="back-to-index" onclick="goBack(); return false;">← Back</a>
           ${html}
         </div>
       `;
     })
     .catch(() => {
       document.querySelector('#container').innerHTML = "<p>Post not found :(</p>";
+    });    document.querySelector('#container').innerHTML = `
+      <div class="post-content">
+        <a href="#" id="back-to-index" onclick="goBack(); return false;">← Back</a>
+        ${html}
+      </div>
+    `;
+}
+
+// Language switcher
+document.addEventListener('DOMContentLoaded', function() {
+  const enBtn = document.getElementById('lang-en');
+  const jaBtn = document.getElementById('lang-ja');
+
+  function getBaseName(path) {
+    // e.g. /posts/about.html or /posts/about.ja.html -> about
+    return path.split('/').pop().replace('.ja.html', '').replace('.html', '');
+  }
+
+  function getDir(path) {
+    // e.g. /posts/about.html -> /posts/
+    return path.substring(0, path.lastIndexOf('/') + 1);
+  }
+
+  if (enBtn && jaBtn) {
+    enBtn.addEventListener('click', function() {
+      if (window.location.pathname.endsWith('.ja.html')) {
+        window.location.href = window.location.pathname.replace('.ja.html', '.html');
+      }
     });
+    jaBtn.addEventListener('click', function() {
+      if (!window.location.pathname.endsWith('.ja.html')) {
+        if (window.location.pathname.endsWith('.html')) {
+          window.location.href = window.location.pathname.replace('.html', '.ja.html');
+        } else {
+          // fallback: if no .html, go to index.ja.html
+          window.location.href = '/index.ja.html';
+        }
+      }
+    });
+  }
+});
+
+function goBack() {
+  // If on a ja page, go to index.ja.html, else index.html
+  if (window.location.pathname.endsWith('.ja.html')) {
+    window.location.href = '/index.ja.html';
+  } else {
+    window.location.href = '/index.html';
+  }
 }
 
