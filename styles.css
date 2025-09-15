@@ -15,7 +15,6 @@ body {
   #container {
     height: 100vh;
     width: 70%;
-    margin-bottom: 60px;
   }
 
 nav {
@@ -55,9 +54,8 @@ nav a:hover {
   cursor: pointer;
 }
 
-nav a:nth-child(3) {
-  font-size: 30px;
-  letter-spacing: -4px;
+#lang-ja {
+  font-size: 12px;
 }
 
 .content {
